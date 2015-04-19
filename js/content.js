@@ -1,5 +1,5 @@
-// var for time reset that allows site to level up in milliseconds
-var resetime = 30000;
+// var for time reset that multiplies the default 24 hours
+var resetime = 1.0;
 
 var url = document.location.href;
 url = new URL(url).hostname;
@@ -93,7 +93,7 @@ chrome.storage.local.get('host',function(obj) {
 	}
 
 	else if (state0){
-		if (new Date().getTime() - hostArr[0].army[index].time > resetime){
+		if (new Date().getTime() - hostArr[0].army[index].time > (86400000.0*resetime)){
 			hostArr[0].army[index].lvl++;
 			hostArr[0].army[index].time = new Date().getTime();
 			console.log(url + " leveling up");
@@ -101,7 +101,7 @@ chrome.storage.local.get('host',function(obj) {
 	}
 
 	else if (state1){
-		if (new Date().getTime() - hostArr[1].army[index].time > resetime){
+		if (new Date().getTime() - hostArr[1].army[index].time > (86400000.0*resetime)){
 			hostArr[1].army[index].lvl++;
 			hostArr[1].army[index].time = new Date().getTime();
 			console.log(url + " leveling up");
