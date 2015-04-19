@@ -1,6 +1,6 @@
 // var to modify how long it takes for next battle.
 // Each decimal place is 10^n minutes.
-var battletime = 0.001;
+var battletime = 1;
 
 function getRandomInt(min, max) {
 	var t = Math.floor(Math.random() * (max - min)) + min;
@@ -10,7 +10,7 @@ function getRandomInt(min, max) {
 
 //when : (Date().now() + getRandomInt(15000,60000));
 chrome.alarms.create("timer",{
-	delayInMinutes: getRandomInt(100,300)*battletime
+	delayInMinutes: getRandomInt(60,1440)*battletime
 });
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
