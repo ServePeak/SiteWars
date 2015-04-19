@@ -3,7 +3,7 @@
 var battletime = 1;
 
 function createNotification(msg){
-	var option = {type: "basic", title: "warfare", message: msg, iconUrl:"notify.png"}
+	var option = {type: "basic", title: "warfare", message: msg, iconUrl:"/images/notify.png"}
 	chrome.notifications.create("warfare",option,function(){});
 	setTimeout(function(){chrome.notifications.clear("warfare",function(){});},8000);
 
