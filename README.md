@@ -1,6 +1,6 @@
 SiteWars
 ========
-SiteWars is a zero-player game that pits website against one another in two teams. 
+SiteWars is a zero-player game that pits websites against one another within two teams. 
 The websites duke it out with their levels that they gain from you visit their site every so often.
 
 __The battle timer is default set from one hour to one day.__
