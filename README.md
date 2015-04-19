@@ -12,7 +12,7 @@ __The level timer is default set to one day.__
 Credits
 -------
 - Jia Sen Wu
-- Matteo Zhang
+- Matteo/Yun Bin Zhang
 - Jacky Lu
 
 Created for HackRU Spring 2015.
