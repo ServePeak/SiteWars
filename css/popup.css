@@ -1,0 +1,11 @@
+#status {
+	border:1px solid gray;
+	margin: 3px;
+	padding: 3px;
+	background-color: #f1f1f1;
+	text-align: center;
+}
+
+body{
+	width: 200px;
+}
