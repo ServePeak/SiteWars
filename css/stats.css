@@ -1,6 +1,6 @@
 body {
 	background-color: #ffc268;
-	background-image: url("images/battle.gif");
+	background-image: url("/images/battle.gif");
   background-repeat: no-repeat;
 	background-attachment: fixed;
   background-position: right bottom;
