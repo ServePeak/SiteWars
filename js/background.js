@@ -2,6 +2,14 @@
 // Each decimal place is 10^n minutes.
 var battletime = 1;
 
+function createNotification(msg){
+	var option = {type: "basic", title: "warfare", message: msg, iconUrl:"notify.png"}
+	chrome.notifications.create("warfare",option,function(){});
+	setTimeout(function(){chrome.notifications.clear("warfare",function(){});},8000);
+
+
+}
+
 function getRandomInt(min, max) {
 	var t = Math.floor(Math.random() * (max - min)) + min;
 	console.log(t);
@@ -39,20 +47,26 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 				console.log(hostArr[0].army[ranInd0].name + " battling " + hostArr[1].army[ranInd1].name + " .....");
 
 				if (diffLvl > 0){
-					console.log(hostArr[0].army[ranInd0].name + " has defeated " + hostArr[1].army[ranInd1].name);
-					history.push(hostArr[0].army[ranInd0].name + " has defeated " + hostArr[1].army[ranInd1].name);
+					var text = hostArr[0].army[ranInd0].name + " has defeated " + hostArr[1].army[ranInd1].name;
+					console.log(text);
+					history.push(text);
+					createNotification(text);
 					hostArr[0].army[ranInd0].lvl = diffLvl;
 					hostArr[1].army.splice(ranInd1,1);				
 				}
 				else if (diffLvl < 0 ){
-					console.log(hostArr[1].army[ranInd1].name + " has defeated " + hostArr[0].army[ranInd0].name);
-					history.push(hostArr[0].army[ranInd0].name + " has defeated " + hostArr[1].army[ranInd1].name);
+					var text = hostArr[1].army[ranInd1].name + " has defeated " + hostArr[0].army[ranInd0].name;
+					console.log(text);
+					history.push(text);
+					createNotification(text);
 					hostArr[1].army[ranInd1].lvl = Math.abs(diffLvl);
 					hostArr[0].army.splice(ranInd0,1);	
 				}
 				else if (diffLvl == 0) {
-					console.log(hostArr[0].army[ranInd0].name + " and " + hostArr[1].army[ranInd1].name + " defeated each other");
-					history.push(hostArr[0].army[ranInd0].name + " and " + hostArr[1].army[ranInd1].name + " defeated each other");
+					var text = hostArr[0].army[ranInd0].name + " and " + hostArr[1].army[ranInd1].name + " defeated each other";
+					console.log(text);
+					history.push(text);
+					createNotification(text);
 					hostArr[1].army.splice(ranInd1,1);
 					hostArr[0].army.splice(ranInd0,1);
 				}
