@@ -152,10 +152,14 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 			}
 		}
-		var red = name0[0] + ' | ' + level0[0] + ' | ' + score0[0];
-		var blue = name1[0] + ' | ' + level1[0] + ' | ' + score1[0];
-		renderLRed( red );
-		renderLBlue( blue );
+		if( name0[0] != undefined ) {
+			var red = name0[0] + ' | ' + level0[0] + ' | ' + score0[0];
+			renderLRed( red );
+		}
+		if( name1[0] != undefined ) {
+			var blue = name1[0] + ' | ' + level1[0] + ' | ' + score1[0];
+			renderLBlue( blue );
+		}
 		});
 	});
 });
