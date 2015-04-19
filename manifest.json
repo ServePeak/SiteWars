@@ -14,12 +14,12 @@
 		"default_title": "SiteWars"
   },
 	"background":{ 
-  	"scripts": ["js/background.js"]
+  	"scripts": ["/js/background.js"]
   },
 	"content_scripts": [
 		{
 			"matches": ["http://*/*", "https://*/*"],
-			"js": ["js/content.js"]
+			"js": ["/js/content.js"]
 		}
 	],
   "permissions": [
