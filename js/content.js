@@ -15,11 +15,13 @@ function getRandomInt(min, max) {
 }
 
 //class definition
-var Site = function(name, lvl){
+var Site = function(name, lvl, score){
 	this.name = name;
 	lvl = typeof lvl !== 'undefined' ? lvl : 1;
 	this.lvl = lvl;
 	this.time = new Date().getTime();
+	score = typeof score !== 'undefined' ? score : 0;
+	this.score = score;
 }
 
 //Site.prototype

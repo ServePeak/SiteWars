@@ -6,14 +6,16 @@ body {
   background-position: right bottom;
 }
 
+td:not(:first-child){text-align:center;}
+
 #wrap {
-    width: 405px;
+    width: 500px;
     margin: 0 auto;
 }
 
 #red {
 	margin:0px;padding:0px;
-	width:200px;
+	width:250px;
 	border:1px solid #000000;
   float:left;
 
@@ -60,10 +62,9 @@ body {
 	
 }
 #red tr:nth-child(odd){ background-color:#f95331; }
-#red tr:nth-child(even)    { background-color:#ffffff; }#red td{
-	vertical-align:middle;
-	
-	
+#red tr:nth-child(even)    { background-color:#ffffff; }
+#red td{
+	vertical-align:middle;	
 	border:1px solid #000000;
 	border-width:0px 1px 1px 0px;
 	padding:7px;
@@ -107,7 +108,7 @@ body {
 
 #blue {
 	margin:0px;padding:0px;
-	width:200px;
+	width:250px;
 	border:1px solid #000000;
   float:right;
 	
@@ -201,7 +202,7 @@ body {
 
 #history {
 	margin:5px 0px 0px 0px;padding:0px;
-	width:405px;
+	width:100%;
 	border:1px solid #000000;
 	float:left;
 	

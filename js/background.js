@@ -1,6 +1,6 @@
 // var to modify how long it takes for next battle.
 // Each decimal place is 10^n minutes.
-var battletime = 1;
+var battletime = 1.0;
 
 function createNotification(msg){
 	var option = {type: "basic", title: "Warfare!", message: msg, iconUrl:"/images/notify.png"}
@@ -50,6 +50,7 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 					history.push(text);
 					createNotification(text);
 					hostArr[0].army[ranInd0].lvl = diffLvl;
+					hostArr[0].army[ranInd0].score++;
 					hostArr[1].army.splice(ranInd1,1);				
 				}
 				else if (diffLvl < 0 ){
@@ -58,6 +59,7 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 					history.push(text);
 					createNotification(text);
 					hostArr[1].army[ranInd1].lvl = Math.abs(diffLvl);
+					hostArr[1].army[ranInd1].score++;
 					hostArr[0].army.splice(ranInd0,1);	
 				}
 				else if (diffLvl == 0) {
