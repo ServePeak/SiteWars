@@ -80,7 +80,7 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 			});
 		}
 		chrome.alarms.create("timer",{
-			delayInMinutes: getRandomInt(10,30)*0.1
+			delayInMinutes: getRandomInt(60,1440)*battletime
 		});
 	});
 });
